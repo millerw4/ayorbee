@@ -38,12 +38,14 @@
   flex-direction: column;
   align-content: center;
   align-items: center;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
 }
 
 /* Styles for Cards */
 .card {
   display: inline-block;
-  width: 45vw;
+  width: 40vw;
   height: 75vh;
   overflow: hidden;
   border: 1.25px solid rgb(233, 233, 233);
