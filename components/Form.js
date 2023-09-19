@@ -63,8 +63,8 @@ const Form = ({ formId, testForm, forNewPet = true }) => {
       if (!res.ok) {
         throw new Error(res.status)
       }
-
-      router.push('/')
+      console.log('form uid', form.uid)
+      router.push('/' + form.uid)
     } catch (error) {
       setMessage('Failed to add test')
     }
@@ -87,15 +87,14 @@ const Form = ({ formId, testForm, forNewPet = true }) => {
   const formValidate = () => {
     let err = {}
     if (!form.prompt) err.prompt = 'Prompt is required'
-    if (!form.embedA) err.embedA = 'Embed link A is required'
-    if (!form.embedB) err.embedB = 'Embed link B is required'
+    if (form.embedA === '') err.embedA = 'Embed link A is required'
+    if (form.embedB === '') err.embedB = 'Embed link B is required'
     return err
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const errs = formValidate()
-    console.log('submitting this test:\n', form)
     if (Object.keys(errs).length === 0) {
       forNewPet ? postData(form) : putData(form)
     } else {

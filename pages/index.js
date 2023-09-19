@@ -10,6 +10,12 @@ const Index = ({ tests }) => {
   }
     return (
       <>
+        <h2>Welcome to ayor🐝!</h2>
+        <h3>To create a simple A/B test, copy and past 2 publicly available links that you would like to compare.</h3>
+        <h3 style={{color: 'red'}}>Note: Please remove any personally identifying information from documents that you upload</h3>
+        <h3>Optionally, change the prompt to something else.</h3>
+        <h3>Hit 'submit' when you're ready, then copy the url and send it to others for a quick opinion.</h3>
+        <h3>Each test and all of its data are deleted automatically after three days.</h3>
         <NewTest />
         <ul>
           {tests.map( test => (
